@@ -1,9 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace BeautySalon.Domain.Entities;
 
-namespace BeautySalon.Domain.Entities;
-
-internal class Services
+/// <summary>
+/// Услуга
+/// </summary>
+public class Services
 {
+
+    /// <summary>
+    /// Идентификатор услуги 
+    /// </summary>
+    public required int Id {  get; set; }
+
+    /// <summary>
+    /// Название услуги
+    /// </summary>
+    public required string Name { get; set; }
+
+    /// <summary>
+    /// Категория услуги
+    /// </summary>
+    public required string Category { get; set; }
+
+    /// <summary>
+    /// Стоимость
+    /// </summary>
+    public required decimal Price { get; set; }
+
+    /// <summary>
+    /// Длительность
+    /// </summary>
+    public required int Duration { get; set; }
 }

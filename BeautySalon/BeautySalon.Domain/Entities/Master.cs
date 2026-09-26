@@ -3,7 +3,7 @@
 /// <summary>
 /// Мастер
 /// </summary>
-internal class Master : Person
+public class Master : Person
 {
 
     /// <summary>
@@ -25,5 +25,4 @@ internal class Master : Person
     /// Стаж работы
     /// </summary>
     public required int WorkExperience { get; set; }
-
 }

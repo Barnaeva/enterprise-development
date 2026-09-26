@@ -1,4 +1,6 @@
-﻿namespace BeautySalon.Domain.Entities;
+﻿using BeautySalon.Domain.Enum;
+namespace BeautySalon.Domain.Entities;
+
 
 /// <summary>
 /// Человек
@@ -9,10 +11,9 @@ public class Person
     /// ФИО
     /// </summary>
     public required string FullName {  get; set; }
+
     /// <summary>
     /// Пол
     /// </summary>
-
-    public required string Male { get; set; }
-
+    public required Male Male { get; set; }
 }
