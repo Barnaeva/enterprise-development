@@ -31,4 +31,5 @@ jobs:
         run: dotnet build BeautySalon/BeautySalon.slnx --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test --project BeautySalon/BeautySalon.Tests/BeautySalon.Tests.csproj --no-build --configuration Release
+        working-directory: BeautySalon/BeautySalon.Tests
+        run: dotnet test --no-build --configuration Release
