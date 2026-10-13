@@ -15,5 +15,5 @@ public class Person
     /// <summary>
     /// Пол
     /// </summary>
-    public required Male Male { get; set; }
+    public required Gender Gender { get; set; }
 }

@@ -3,7 +3,7 @@
 /// <summary>
 /// Пол
 /// </summary>
-public enum Male
+public enum Gender
 {
 
     /// <summary>

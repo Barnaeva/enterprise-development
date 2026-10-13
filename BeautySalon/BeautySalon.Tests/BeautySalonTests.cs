@@ -11,12 +11,6 @@ public class BeautySalonTests
     [Fact]
     public void GetMastersWithExperienceAtLeastFiveYears()
     {
-        var result = TestData.Masters
-            .Where(master => master.WorkExperience >= 5)
-            .OrderBy(master => master.FullName)
-            .Select(master => master.FullName)
-            .ToList();
-
         var expected = new List<string>
         {
             "Волкова Ольга Максимовна",
@@ -28,6 +22,12 @@ public class BeautySalonTests
             "Федорова Виктория Ильинична"
         };
 
+        var result = TestData.Masters
+            .Where(master => master.WorkExperience >= 5)
+            .OrderBy(master => master.FullName)
+            .Select(master => master.FullName)
+            .ToList();
+
         Assert.Equal(expected, result);
     }
 
@@ -37,6 +37,12 @@ public class BeautySalonTests
     [Fact]
     public void GetFreeSlotsForSelectedMaster()
     {
+        var expected = new List<string>
+        {
+            "10:00-11:00",
+            "12:30-14:00"
+        };
+
         var selectedMaster = TestData.Masters.First();
 
         var appointments = TestData.Appointments
@@ -65,12 +71,6 @@ public class BeautySalonTests
             .Select(item => $"{item.Start:HH:mm}-{item.End:HH:mm}")
             .ToList();
 
-        var expected = new List<string>
-        {
-            "10:00-11:00",
-            "12:30-14:00"
-        };
-
         Assert.Equal(expected, result);
     }
 
@@ -80,14 +80,6 @@ public class BeautySalonTests
     [Fact]
     public void GetTopFivePopularServices()
     {
-        var result = TestData.Appointments
-            .GroupBy(appointment => appointment.Service)
-            .OrderByDescending(group => group.Count())
-            .ThenBy(group => group.Key.Name)
-            .Take(5)
-            .Select(group => group.Key.Name)
-            .ToList();
-
         var expected = new List<string>
         {
             "Стрижка",
@@ -96,6 +88,14 @@ public class BeautySalonTests
             "Педикюр",
             "Укладка"
         };
+
+        var result = TestData.Appointments
+            .GroupBy(appointment => appointment.Service)
+            .OrderByDescending(group => group.Count())
+            .ThenBy(group => group.Key.Name)
+            .Take(5)
+            .Select(group => group.Key.Name)
+            .ToList();
 
         Assert.Equal(expected, result);
     }
@@ -106,6 +106,8 @@ public class BeautySalonTests
     [Fact]
     public void GetNumberOfRepeatClientAppointmentsForLastMonth()
     {
+        const int expected = 8;
+
         var currentDate = new DateTime(2026, 9, 25);
         var monthStart = currentDate.AddMonths(-1);
 
@@ -117,8 +119,6 @@ public class BeautySalonTests
             .Where(group => group.Count() > 1)
             .Sum(group => group.Count() - 1);
 
-        const int expected = 8;
-
         Assert.Equal(expected, result);
     }
 
@@ -128,6 +128,13 @@ public class BeautySalonTests
     [Fact]
     public void GetClientsRegisteredWithSeveralMasters()
     {
+        var expected = new List<string>
+        {
+            "Иванов Сергей Петрович",
+            "Смирнова Марина Алексеевна",
+            "Кузнецова Ольга Дмитриевна"
+        };
+
         var result = TestData.Appointments
             .GroupBy(appointment => appointment.Client)
             .Where(group =>
@@ -137,13 +144,6 @@ public class BeautySalonTests
             .OrderBy(group => group.Key.Birthday)
             .Select(group => group.Key.FullName)
             .ToList();
-
-        var expected = new List<string>
-        {
-            "Иванов Сергей Петрович",
-            "Смирнова Марина Алексеевна",
-            "Кузнецова Ольга Дмитриевна"
-        };
 
         Assert.Equal(expected, result);
     }

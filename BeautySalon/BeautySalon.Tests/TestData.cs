@@ -17,7 +17,7 @@ public static class TestData
         {
             Id = 1,
             FullName = "Иванова Анна Сергеевна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             PassportNumber = "4501 123456",
             Specialization = "Парикмахер",
             WorkExperience = 10
@@ -26,7 +26,7 @@ public static class TestData
         {
             Id = 2,
             FullName = "Петрова Мария Андреевна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             PassportNumber = "4502 234567",
             Specialization = "Визажист",
             WorkExperience = 7
@@ -35,7 +35,7 @@ public static class TestData
         {
             Id = 3,
             FullName = "Соколова Елена Викторовна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             PassportNumber = "4503 345678",
             Specialization = "Мастер маникюра",
             WorkExperience = 5
@@ -44,7 +44,7 @@ public static class TestData
         {
             Id = 4,
             FullName = "Кузнецов Дмитрий Олегович",
-            Male = Male.Male,
+            Gender = Gender.Male,
             PassportNumber = "4504 456789",
             Specialization = "Парикмахер",
             WorkExperience = 6
@@ -53,7 +53,7 @@ public static class TestData
         {
             Id = 5,
             FullName = "Орлова Екатерина Павловна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             PassportNumber = "4505 567890",
             Specialization = "Мастер маникюра",
             WorkExperience = 3
@@ -62,7 +62,7 @@ public static class TestData
         {
             Id = 6,
             FullName = "Морозов Алексей Игоревич",
-            Male = Male.Male,
+            Gender = Gender.Male,
             PassportNumber = "4506 678901",
             Specialization = "Барбер",
             WorkExperience = 2
@@ -71,7 +71,7 @@ public static class TestData
         {
             Id = 7,
             FullName = "Волкова Ольга Максимовна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             PassportNumber = "4507 789012",
             Specialization = "Визажист",
             WorkExperience = 8
@@ -80,7 +80,7 @@ public static class TestData
         {
             Id = 8,
             FullName = "Алексеева Наталья Романовна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             PassportNumber = "4508 890123",
             Specialization = "Косметолог",
             WorkExperience = 4
@@ -89,7 +89,7 @@ public static class TestData
         {
             Id = 9,
             FullName = "Лебедев Артем Сергеевич",
-            Male = Male.Male,
+            Gender = Gender.Male,
             PassportNumber = "4509 901234",
             Specialization = "Барбер",
             WorkExperience = 11
@@ -98,7 +98,7 @@ public static class TestData
         {
             Id = 10,
             FullName = "Федорова Виктория Ильинична",
-            Male = Male.Female,
+            Gender = Gender.Female,
             PassportNumber = "4510 012345",
             Specialization = "Косметолог",
             WorkExperience = 5
@@ -114,7 +114,7 @@ public static class TestData
         {
             Id = 1,
             FullName = "Смирнова Марина Алексеевна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             Birthday = new DateOnly(1990, 4, 15),
             PhoneNumber = "+7 900 000-00-01"
         },
@@ -122,7 +122,7 @@ public static class TestData
         {
             Id = 2,
             FullName = "Иванов Сергей Петрович",
-            Male = Male.Male,
+            Gender = Gender.Male,
             Birthday = new DateOnly(1985, 8, 20),
             PhoneNumber = "+7 900 000-00-02"
         },
@@ -130,7 +130,7 @@ public static class TestData
         {
             Id = 3,
             FullName = "Кузнецова Ольга Дмитриевна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             Birthday = new DateOnly(1995, 2, 10),
             PhoneNumber = "+7 900 000-00-03"
         },
@@ -138,7 +138,7 @@ public static class TestData
         {
             Id = 4,
             FullName = "Попов Андрей Викторович",
-            Male = Male.Male,
+            Gender = Gender.Male,
             Birthday = new DateOnly(1988, 11, 3),
             PhoneNumber = "+7 900 000-00-04"
         },
@@ -146,7 +146,7 @@ public static class TestData
         {
             Id = 5,
             FullName = "Васильева Екатерина Олеговна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             Birthday = new DateOnly(1992, 6, 25),
             PhoneNumber = "+7 900 000-00-05"
         },
@@ -154,7 +154,7 @@ public static class TestData
         {
             Id = 6,
             FullName = "Михайлов Денис Сергеевич",
-            Male = Male.Male,
+            Gender = Gender.Male,
             Birthday = new DateOnly(1998, 1, 18),
             PhoneNumber = "+7 900 000-00-06"
         },
@@ -162,7 +162,7 @@ public static class TestData
         {
             Id = 7,
             FullName = "Николаева Алина Романовна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             Birthday = new DateOnly(1983, 9, 12),
             PhoneNumber = "+7 900 000-00-07"
         },
@@ -170,7 +170,7 @@ public static class TestData
         {
             Id = 8,
             FullName = "Федоров Максим Игоревич",
-            Male = Male.Male,
+            Gender = Gender.Male,
             Birthday = new DateOnly(1991, 12, 7),
             PhoneNumber = "+7 900 000-00-08"
         },
@@ -178,7 +178,7 @@ public static class TestData
         {
             Id = 9,
             FullName = "Соколова Виктория Андреевна",
-            Male = Male.Female,
+            Gender = Gender.Female,
             Birthday = new DateOnly(1996, 5, 30),
             PhoneNumber = "+7 900 000-00-09"
         },
@@ -186,7 +186,7 @@ public static class TestData
         {
             Id = 10,
             FullName = "Орлов Роман Александрович",
-            Male = Male.Male,
+            Gender = Gender.Male,
             Birthday = new DateOnly(1987, 3, 22),
             PhoneNumber = "+7 900 000-00-10"
         }
