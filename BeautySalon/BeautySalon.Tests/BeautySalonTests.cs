@@ -43,7 +43,7 @@ public class BeautySalonTests
             "12:30-14:00"
         };
 
-        var selectedMaster = TestData.Masters.First();
+        var selectedMaster = TestData.Masters.First(m => m.Id == 1);
 
         var appointments = TestData.Appointments
             .Where(appointment => appointment.Master.Id == selectedMaster.Id)
