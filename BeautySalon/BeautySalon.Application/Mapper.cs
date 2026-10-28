@@ -34,8 +34,8 @@ public static class Mapper
     public static AppointmentDto Map(Appointment entity) =>
         new(entity.Id, Map(entity.Client), Map(entity.Service), Map(entity.Master), entity.StartTime, entity.IsRegular);
 
-    public static Appointment Map(AppointmentCreateUpdateDto dto) =>
-        new() { Id = 0, StartTime = dto.StartTime, IsRegular = dto.IsRegular };
+    public static Appointment Map(AppointmentCreateUpdateDto dto, Client client, Service service, Master master) =>
+        new() { Id = 0, Client = client, Service = service, Master = master, StartTime = dto.StartTime, IsRegular = dto.IsRegular };
 
     public static IList<AppointmentDto> Map(IList<Appointment> entities) => [.. entities.Select(Map)];
 }
