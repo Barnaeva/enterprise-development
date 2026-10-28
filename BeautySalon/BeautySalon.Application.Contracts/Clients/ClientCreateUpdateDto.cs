@@ -9,4 +9,4 @@ namespace BeautySalon.Application.Contracts.Clients;
 /// <param name="Genred">Пол</param>
 /// <param name="Birthday">Год рождения</param>
 /// <param name="PhoneNumber">Номер телефона</param>
-public record ClientCreateUpdateDto(string FullName, Gender Genred, DateOnly Birthday, string PhoneNumber);
+public record ClientCreateUpdateDto(string FullName, Gender Gender, DateOnly Birthday, string PhoneNumber);

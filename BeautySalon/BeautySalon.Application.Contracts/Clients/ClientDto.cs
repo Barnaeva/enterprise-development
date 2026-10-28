@@ -7,7 +7,7 @@ namespace BeautySalon.Application.Contracts.Clients;
 /// </summary>
 /// <param name="Id">Идентификатор</param>
 /// <param name="FullName">Полное имя</param>
-/// <param name="Genred">Пол</param>
+/// <param name="Gender">Пол</param>
 /// <param name="Birthday">Год рождения</param>
 /// <param name="PhoneNumber">Номер телефона</param>
-public record ClientDto(int Id, string FullName, Gender Genred, DateOnly Birthday, string PhoneNumber);
+public record ClientDto(int Id, string FullName, Gender Gender, DateOnly Birthday, string PhoneNumber);
