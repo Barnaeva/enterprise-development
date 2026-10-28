@@ -5,7 +5,7 @@ using BeautySalon.Domain.Entities;
 namespace BeautySalon.Infrastructure.InMemory;
 
 /// <summary>
-/// Репозиторий для клиентов
+/// Репозиторий для услуг
 /// </summary>
 public class ServiceInMemoryRepository : IRepository<Service, int>
 {
