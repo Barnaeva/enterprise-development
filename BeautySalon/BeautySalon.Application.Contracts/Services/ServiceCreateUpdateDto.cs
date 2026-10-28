@@ -1,7 +1,7 @@
 ﻿namespace BeautySalon.Application.Contracts.Services;
 
 /// <summary>
-/// Dto для get запросов к услугам
+/// Dto для put и post запросов к услугам
 /// </summary>
 /// <param name="Name">Название</param>
 /// <param name="Category">Категория</param>
