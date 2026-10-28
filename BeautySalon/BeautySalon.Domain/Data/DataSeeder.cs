@@ -1,12 +1,12 @@
 ﻿using BeautySalon.Domain.Entities;
 using BeautySalon.Domain.Enum;
 
-namespace BeautySalon.Tests;
+namespace BeautySalon.Domain.Data;
 
 /// <summary>
 /// Тестовые данные
 /// </summary>
-public static class TestData
+public static class DataSeeder
 {
     /// <summary>
     /// Мастера
@@ -195,9 +195,9 @@ public static class TestData
     /// <summary>
     /// Услуги
     /// </summary>
-    public static List<Services> Services { get; } =
+    public static List<Service> Services { get; } =
     [
-        new Services
+        new Service
         {
             Id = 1,
             Name = "Стрижка",
@@ -205,7 +205,7 @@ public static class TestData
             Price = 1800m,
             Duration = 60
         },
-        new Services
+        new Service
         {
             Id = 2,
             Name = "Маникюр",
@@ -213,7 +213,7 @@ public static class TestData
             Price = 1500m,
             Duration = 90
         },
-        new Services
+        new Service
         {
             Id = 3,
             Name = "Окрашивание",
@@ -221,7 +221,7 @@ public static class TestData
             Price = 4500m,
             Duration = 180
         },
-        new Services
+        new Service
         {
             Id = 4,
             Name = "Укладка",
@@ -229,7 +229,7 @@ public static class TestData
             Price = 2000m,
             Duration = 60
         },
-        new Services
+        new Service
         {
             Id = 5,
             Name = "Педикюр",
@@ -237,7 +237,7 @@ public static class TestData
             Price = 2200m,
             Duration = 120
         },
-        new Services
+        new Service
         {
             Id = 6,
             Name = "Макияж",
@@ -245,7 +245,7 @@ public static class TestData
             Price = 2500m,
             Duration = 90
         },
-        new Services
+        new Service
         {
             Id = 7,
             Name = "Коррекция бровей",
@@ -253,7 +253,7 @@ public static class TestData
             Price = 1000m,
             Duration = 30
         },
-        new Services
+        new Service
         {
             Id = 8,
             Name = "Уход за лицом",
@@ -261,7 +261,7 @@ public static class TestData
             Price = 3000m,
             Duration = 90
         },
-        new Services
+        new Service
         {
             Id = 9,
             Name = "Массаж",
@@ -269,7 +269,7 @@ public static class TestData
             Price = 2500m,
             Duration = 60
         },
-        new Services
+        new Service
         {
             Id = 10,
             Name = "Ламинирование ресниц",

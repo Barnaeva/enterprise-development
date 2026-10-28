@@ -1,4 +1,6 @@
-﻿namespace BeautySalon.Tests;
+﻿using BeautySalon.Domain.Data;
+
+namespace BeautySalon.Tests;
 
 /// <summary>
 /// Unit тесты
@@ -22,7 +24,7 @@ public class BeautySalonTests
             "Федорова Виктория Ильинична"
         };
 
-        var result = TestData.Masters
+        var result = DataSeeder.Masters
             .Where(master => master.WorkExperience >= 5)
             .OrderBy(master => master.FullName)
             .Select(master => master.FullName)
@@ -43,9 +45,9 @@ public class BeautySalonTests
             "12:30-14:00"
         };
 
-        var selectedMaster = TestData.Masters.First();
+        var selectedMaster = DataSeeder.Masters.First();
 
-        var appointments = TestData.Appointments
+        var appointments = DataSeeder.Appointments
             .Where(appointment => appointment.Master.Id == selectedMaster.Id)
             .Where(appointment =>
                 appointment.StartTime.Date == new DateTime(2026, 9, 25))
@@ -89,7 +91,7 @@ public class BeautySalonTests
             "Укладка"
         };
 
-        var result = TestData.Appointments
+        var result = DataSeeder.Appointments
             .GroupBy(appointment => appointment.Service)
             .OrderByDescending(group => group.Count())
             .ThenBy(group => group.Key.Name)
@@ -111,7 +113,7 @@ public class BeautySalonTests
         var currentDate = new DateTime(2026, 9, 25);
         var monthStart = currentDate.AddMonths(-1);
 
-        var result = TestData.Appointments
+        var result = DataSeeder.Appointments
             .Where(appointment =>
                 appointment.StartTime.Date >= monthStart.Date &&
                 appointment.StartTime.Date <= currentDate.Date)
@@ -135,7 +137,7 @@ public class BeautySalonTests
             "Кузнецова Ольга Дмитриевна"
         };
 
-        var result = TestData.Appointments
+        var result = DataSeeder.Appointments
             .GroupBy(appointment => appointment.Client)
             .Where(group =>
                 group.Select(appointment => appointment.Master.Id)

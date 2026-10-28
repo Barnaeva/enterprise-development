@@ -3,7 +3,7 @@
 /// <summary>
 /// Услуга
 /// </summary>
-public class Services
+public class Service
 {
 
     /// <summary>

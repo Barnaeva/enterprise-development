@@ -19,7 +19,7 @@ public class Appointment
     /// <summary>
     /// Услуга
     /// </summary>
-    public required Services Service { get; set; }
+    public required Service Service { get; set; }
 
     /// <summary>
     /// Мастер

@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="BeautySalon.Domain/BeautySalon.Domain.csproj" />
+  <Project Path="BeautySalon.Infrastructure.InMemory/BeautySalon.Infrastructure.InMemory.csproj" Id="857be8c1-54e8-48d0-b779-87082ba8c16e" />
   <Project Path="BeautySalon.Tests/BeautySalon.Tests.csproj" Id="05150369-a139-431c-9247-d7bc62033422" />
 </Solution>
