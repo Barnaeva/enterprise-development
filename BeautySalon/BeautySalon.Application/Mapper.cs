@@ -2,6 +2,7 @@
 using BeautySalon.Application.Contracts.Clients;
 using BeautySalon.Application.Contracts.Masters;
 using BeautySalon.Application.Contracts.Services;
+using BeautySalon.Application.Contracts.Appointments;
 
 namespace BeautySalon.Application;
 
@@ -29,4 +30,12 @@ public static class Mapper
         new() { Id = 0, Name = dto.Name, Category = dto.Category, Price = dto.Price, Duration = dto.Duration };
 
     public static IList<ServiceDto> Map(IList<Service> entities) => [.. entities.Select(Map)];
+
+    public static AppointmentDto Map(Appointment entity) =>
+        new(entity.Id, Map(entity.Client), Map(entity.Service), Map(entity.Master), entity.StartTime, entity.IsRegular);
+
+    public static Appointment Map(AppointmentCreateUpdateDto dto) =>
+        new() { Id = 0, StartTime = dto.StartTime, IsRegular = dto.IsRegular };
+
+    public static IList<AppointmentDto> Map(IList<Appointment> entities) => [.. entities.Select(Map)];
 }
