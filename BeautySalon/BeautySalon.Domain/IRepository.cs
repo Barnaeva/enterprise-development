@@ -4,7 +4,7 @@
 /// Интерфейс репозитория CRUD операций
 /// </summary>
 /// <typeparam name="TEntity">Тип сущности</typeparam>
-/// <typeparam name="TKey">Тип  Id сущности</typeparam>
+/// <typeparam name="TKey">Тип Id сущности</typeparam>
 public interface IRepository<TEntity, TKey>
 {
     /// <summary>
