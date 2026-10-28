@@ -8,7 +8,7 @@ namespace BeautySalon.Application.Services;
 /// <summary>
 /// Служба для CRUD операций c мастерами
 /// </summary>
-/// <param name="clientRepository">Репозиторий мастеров</param>
+/// <param name="masterRepository">Репозиторий мастеров</param>
 public class MasterService(IRepository<Master, int> masterRepository) : IApplicationService<MasterDto, MasterCreateUpdateDto, int>
 {
     /// <inheritdoc/>
