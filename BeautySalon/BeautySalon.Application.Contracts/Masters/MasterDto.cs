@@ -7,8 +7,8 @@ namespace BeautySalon.Application.Contracts.Masters;
 /// </summary>
 /// <param name="Id">Идентификатор</param>
 /// <param name="FullName">Полное имя</param>
-/// <param name="Genred">Пол</param>
+/// <param name="Gender">Пол</param>
 /// <param name="PassportNumber">Номер паспорта</param>
 /// <param name="Specialization">Специализация</param>
 /// <param name="WorkExperience">Стаж работы</param>
-public record MasterDto(int Id, string FullName, Gender Genred, string PassportNumber, string Specialization, int WorkExperience);
+public record MasterDto(int Id, string FullName, Gender Gender, string PassportNumber, string Specialization, int WorkExperience);
