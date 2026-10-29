@@ -20,7 +20,7 @@ public interface IAnalyticService
     /// </summary>
     /// <param name="masterId">Id мастера</param>
     /// <returns>Список окошек</returns>
-    public Task<IList<FreeSlotDto>?> GetFreeSlotsForSelectedMaster(int masterId);
+    public Task<IList<FreeSlotDto>?> GetFreeSlotsForSelectedMaster(int masterId, DateOnly? date = null);
 
     /// <summary>
     /// Получает список из пяти самых популярных услуг
