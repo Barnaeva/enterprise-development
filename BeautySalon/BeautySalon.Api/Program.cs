@@ -22,6 +22,8 @@ builder.Services.AddScoped<IApplicationService<MasterDto, MasterCreateUpdateDto,
 builder.Services.AddScoped<IApplicationService<ServiceDto, ServiceCreateUpdateDto, int>, ServiceService>();
 builder.Services.AddScoped<IApplicationService<AppointmentDto, AppointmentCreateUpdateDto, int>, AppointmentService>();
 
+builder.Services.AddScoped<IAnalyticService, AnalyticService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

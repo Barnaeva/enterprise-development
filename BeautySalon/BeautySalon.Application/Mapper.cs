@@ -7,6 +7,9 @@ using BeautySalon.Application.Contracts.Analytics;
 
 namespace BeautySalon.Application;
 
+/// <summary>
+/// Маппер сущностей в Dto и обратно
+/// </summary>
 public static class Mapper
 {
     public static ClientDto Map(Client entity) => new(entity.Id, entity.FullName, entity.Gender, entity.Birthday, entity.PhoneNumber);
