@@ -19,7 +19,7 @@ public class AnalyticController(IAnalyticService analyticService, ILogger<Analyt
     /// Получение списка мастеров со стажем работы не менее 5 лет
     /// </summary>
     /// <returns>Список мастеров</returns>
-    [HttpGet("top-5-masters")]
+    [HttpGet("masters-with-experience-at-least-5-years")]
     [ProducesResponseType(200)]
     [ProducesResponseType(500)]
     public async Task<ActionResult<IList<MasterDto>>> GetMastersWithExperienceAtLeastFiveYears()

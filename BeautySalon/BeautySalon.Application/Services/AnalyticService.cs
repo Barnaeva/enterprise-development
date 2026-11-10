@@ -33,8 +33,6 @@ public class AnalyticService(
     /// <inheritdoc/>
     public async Task<IList<FreeSlotDto>?> GetFreeSlotsForSelectedMaster(int masterId, DateOnly? date = null)
     {
-        var master = await masterRepository.Read(masterId);
-
         var appointments = (await appointmentRepository.ReadAll()).Where(a => a.Master.Id == masterId);
 
         if (date.HasValue)

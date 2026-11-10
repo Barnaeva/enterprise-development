@@ -127,13 +127,12 @@ public abstract class CrudControllerBase<TDto, TCreateUpdateDto, TKey>(
     /// <param name="id">Id</param>
     [HttpDelete("{id}")]
     [ProducesResponseType(204)]
-    [ProducesResponseType(404)]
     [ProducesResponseType(500)]
     public async Task<IActionResult> Delete(TKey id)
     {
         try
         {
-            var result = await applicationService.Delete(id);
+            await applicationService.Delete(id);
 
             return NoContent();
         }
