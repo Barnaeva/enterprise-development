@@ -72,7 +72,15 @@ public class AnalyticService(
         var now = DateTime.Now;
         var from = now.AddMonths(-1);
 
-        return appointments.Count(a => a.IsRegular && a.StartTime >= from && a.StartTime <= now);
+        var result = appointments
+        .Where(appointment =>
+            appointment.StartTime.Date >= from.Date &&
+            appointment.StartTime.Date <= now.Date)
+        .GroupBy(appointment => appointment.Client)
+        .Where(group => group.Count() > 1)
+        .Sum(group => group.Count() - 1);
+
+        return result;
     }
 
     /// <inheritdoc/>
