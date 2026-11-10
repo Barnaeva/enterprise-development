@@ -9,8 +9,8 @@ namespace BeautySalon.Infrastructure.InMemory;
 /// </summary>
 public class AppointmentInMemoryRepository : IRepository<Appointment, int>
 {
-    private readonly List<Appointment> _appointments = DataSeeder.Appointments;
-    private int _lastId = 1;
+    private readonly List<Appointment> _appointments = DataSeeder.Appointments.ToList();
+    private int _lastId = DataSeeder.Appointments.Count + 1;
 
     /// <inheritdoc/>
     public Task<Appointment> Create(Appointment entity)
@@ -48,6 +48,9 @@ public class AppointmentInMemoryRepository : IRepository<Appointment, int>
     public Task<Appointment> Update(Appointment entity)
     {
         var appointment = Read(entity.Id).Result;
+
+        if (appointment == null)
+            return Create(entity);
 
         appointment.Client = entity.Client;
         appointment.Service = entity.Service;

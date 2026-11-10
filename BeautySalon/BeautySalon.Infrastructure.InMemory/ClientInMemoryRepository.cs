@@ -9,8 +9,8 @@ namespace BeautySalon.Infrastructure.InMemory;
 /// </summary>
 public class ClientInMemoryRepository : IRepository<Client, int>
 {
-    private readonly List<Client> _clients = DataSeeder.Clients;
-    private int _lastId = 1;
+    private readonly List<Client> _clients = DataSeeder.Clients.ToList();
+    private int _lastId = DataSeeder.Clients.Count + 1;
 
     /// <inheritdoc/>
     public Task<Client> Create(Client entity)
@@ -24,6 +24,8 @@ public class ClientInMemoryRepository : IRepository<Client, int>
     public Task<bool> Delete(int entityId)
     {
         var client = Read(entityId).Result;
+        if (client == null)
+            return Task.FromResult(false);
 
         var result = _clients.Remove(client);
         return Task.FromResult(result);
@@ -46,6 +48,9 @@ public class ClientInMemoryRepository : IRepository<Client, int>
     public Task<Client> Update(Client entity)
     {
         var client = Read(entity.Id).Result;
+
+        if (client == null)
+            return Create(entity);
 
         client.FullName = entity.FullName;
         client.Birthday = entity.Birthday;

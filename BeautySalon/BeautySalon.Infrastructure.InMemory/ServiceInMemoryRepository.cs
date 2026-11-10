@@ -9,8 +9,8 @@ namespace BeautySalon.Infrastructure.InMemory;
 /// </summary>
 public class ServiceInMemoryRepository : IRepository<Service, int>
 {
-    private readonly List<Service> _services = DataSeeder.Services;
-    private int _lastId = 1;
+    private readonly List<Service> _services = DataSeeder.Services.ToList();
+    private int _lastId = DataSeeder.Services.Count + 1;
 
     /// <inheritdoc/>
     public Task<Service> Create(Service entity)
@@ -24,6 +24,8 @@ public class ServiceInMemoryRepository : IRepository<Service, int>
     public Task<bool> Delete(int entityId)
     {
         var service = Read(entityId).Result;
+        if (service == null)
+            return Task.FromResult(false);
 
         var result = _services.Remove(service);
         return Task.FromResult(result);
@@ -46,6 +48,9 @@ public class ServiceInMemoryRepository : IRepository<Service, int>
     public Task<Service> Update(Service entity)
     {
         var service = Read(entity.Id).Result;
+
+        if (service == null)
+            return Create(entity);
 
         service.Name = entity.Name;
         service.Category = entity.Category;
