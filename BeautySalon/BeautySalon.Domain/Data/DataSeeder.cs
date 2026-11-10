@@ -1,5 +1,5 @@
 ﻿using BeautySalon.Domain.Entities;
-using BeautySalon.Domain.Enum;
+using BeautySalon.Shared.Enum;
 
 namespace BeautySalon.Domain.Data;
 

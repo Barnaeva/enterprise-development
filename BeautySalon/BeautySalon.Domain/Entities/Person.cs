@@ -1,6 +1,6 @@
-﻿using BeautySalon.Domain.Enum;
-namespace BeautySalon.Domain.Entities;
+﻿using BeautySalon.Shared.Enum;
 
+namespace BeautySalon.Domain.Entities;
 
 /// <summary>
 /// Человек

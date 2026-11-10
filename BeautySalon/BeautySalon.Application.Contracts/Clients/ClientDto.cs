@@ -1,4 +1,4 @@
-﻿using BeautySalon.Domain.Enum;
+﻿using BeautySalon.Shared.Enum;
 
 namespace BeautySalon.Application.Contracts.Clients;
 

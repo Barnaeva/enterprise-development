@@ -1,4 +1,4 @@
-﻿namespace BeautySalon.Domain.Enum;
+﻿namespace BeautySalon.Shared.Enum;
 
 /// <summary>
 /// Пол
