@@ -1,7 +1,8 @@
 using Scalar.AspNetCore;
 using BeautySalon.Domain;
 using BeautySalon.Domain.Entities;
-using BeautySalon.Infrastructure.InMemory;
+using BeautySalon.Infrastructure.EfCore;
+using BeautySalon.Infrastructure.EfCore.Repositories;
 using BeautySalon.Application.Contracts;
 using BeautySalon.Application.Contracts.Clients;
 using BeautySalon.Application.Contracts.Masters;
@@ -11,11 +12,13 @@ using BeautySalon.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddMySqlDbContext<BeautySalonDbContext>("MySQL");
+
 // Add services to the container.
-builder.Services.AddSingleton<IRepository<Client, int>, ClientInMemoryRepository>();
-builder.Services.AddSingleton<IRepository<Master, int>, MasterInMemoryRepository>();
-builder.Services.AddSingleton<IRepository<Service, int>, ServiceInMemoryRepository>();
-builder.Services.AddSingleton<IRepository<Appointment, int>, AppointmentInMemoryRepository>();
+builder.Services.AddTransient<IRepository<Client, int>, ClientEfCoreRepository>();
+builder.Services.AddTransient<IRepository<Master, int>, MasterEfCoreRepository>();
+builder.Services.AddTransient<IRepository<Service, int>, ServiceEfCoreRepository>();
+builder.Services.AddTransient<IRepository<Appointment, int>, AppointmentEfCoreRepository>();
 
 builder.Services.AddScoped<IApplicationService<ClientDto, ClientCreateUpdateDto, int>, ClientService>();
 builder.Services.AddScoped<IApplicationService<MasterDto, MasterCreateUpdateDto, int>, MasterService>();
