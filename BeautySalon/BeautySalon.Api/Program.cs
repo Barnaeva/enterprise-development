@@ -9,8 +9,11 @@ using BeautySalon.Application.Contracts.Masters;
 using BeautySalon.Application.Contracts.Services;
 using BeautySalon.Application.Contracts.Appointments;
 using BeautySalon.Application.Services;
+using BeautySalon.ServiceDefaults;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
 
 builder.AddMySqlDbContext<BeautySalonDbContext>("MySQL");
 
@@ -39,6 +42,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
     app.MapScalarApiReference();
 }
+
+app.MapDefaultEndpoints();
 
 app.UseHttpsRedirection();
 

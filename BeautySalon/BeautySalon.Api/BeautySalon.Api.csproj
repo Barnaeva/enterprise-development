@@ -9,6 +9,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Scalar.AspNetCore" Version="2.18.5" />
   </ItemGroup>
 
@@ -17,6 +21,7 @@
     <ProjectReference Include="..\BeautySalon.Application\BeautySalon.Application.csproj" />
     <ProjectReference Include="..\BeautySalon.Domain\BeautySalon.Domain.csproj" />
     <ProjectReference Include="..\BeautySalon.Infrastructure.EfCore\BeautySalon.Infrastructure.EfCore.csproj" />
+    <ProjectReference Include="..\BeautySalon.ServiceDefaults\BeautySalon.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>
