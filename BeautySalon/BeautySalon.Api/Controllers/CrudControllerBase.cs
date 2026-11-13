@@ -57,9 +57,6 @@ public abstract class CrudControllerBase<TDto, TCreateUpdateDto, TKey>(
         {
             var result = await applicationService.GetAll();
 
-            if (result == null)
-                return NotFound();
-
             return Ok(result);
         }
         catch (Exception ex)
