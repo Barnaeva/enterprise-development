@@ -10,12 +10,13 @@ using BeautySalon.Application.Contracts.Services;
 using BeautySalon.Application.Contracts.Appointments;
 using BeautySalon.Application.Services;
 using BeautySalon.ServiceDefaults;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
 
-builder.AddMySqlDbContext<BeautySalonDbContext>("MySQL");
+builder.AddMySqlDbContext<BeautySalonDbContext>("MySQL", settings => settings.ServerVersion = "8.0.36-mysql");
 
 // Add services to the container.
 builder.Services.AddTransient<IRepository<Client, int>, ClientEfCoreRepository>();
@@ -41,6 +42,11 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.MapScalarApiReference();
+
+    using var scope = app.Services.CreateScope();
+
+    var context = scope.ServiceProvider.GetRequiredService<BeautySalonDbContext>();
+    context.Database.Migrate();
 }
 
 app.MapDefaultEndpoints();

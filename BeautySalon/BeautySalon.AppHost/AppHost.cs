@@ -1,6 +1,6 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
-const string database = "beauty_salon";
+const string database = "beautysalon";
 
 var password = builder.AddParameter("MySqlPassword", true);
 
